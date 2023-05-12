@@ -1,0 +1,10 @@
+layouts:
+  - tall
+  - fullscreen
+  - floating
+
+mouse-follows-focus: true
+focus-follows-mouse: false
+
+window-margins: true
+window-margin-size: 10
