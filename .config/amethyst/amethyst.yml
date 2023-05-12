@@ -3,6 +3,14 @@ layouts:
   - fullscreen
   - floating
 
+focus-cw:
+  mod: mod1
+  key: j
+
+focus-ccw:
+  mod: mod1
+  key: k
+
 mouse-follows-focus: true
 focus-follows-mouse: false
 
