@@ -19,7 +19,7 @@ return {
         "jsonls",
         "lua_ls",
         "terraformls",
-        -- "tflint",
+        "tflint",
         "yamlls",
       }
       local lspconfig = require("lspconfig")
