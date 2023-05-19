@@ -16,7 +16,7 @@ return {
     version = "*",
     lazy = false,
     keys = {
-      { "<leader>tt", "<cmd>ToggleTerm<CR>", desc = "Open Terminal", mode = "n" },
+      { "<leader>t", "<cmd>ToggleTerm<CR>", desc = "Open Terminal", mode = "n" },
     },
     config = function()
       local opts = { silent = true }

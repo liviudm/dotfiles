@@ -52,9 +52,9 @@ keymap("n", "<leader>cl", "<cmd>Lazy<cr>", opts)
 
 -- Telescope --
 keymap("n", "<leader><leader>", "<cmd>Telescope find_files hidden=true<cr>", opts)
-keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>sg", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<leader>bb", "<cmd>Telescope buffers<cr>", opts)
-keymap("n", "<leader>fp", "<cmd>lua require'telescope'.extensions.projects.projects{}<cr>", opts)
+keymap("n", "<leader>pp", "<cmd>lua require'telescope'.extensions.projects.projects{}<cr>", opts)
 -- keymap("n", "<leader>ff", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({previewer = false}))<cr>", opts)
 
 -- Neovim File Actions--
