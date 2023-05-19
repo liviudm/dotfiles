@@ -16,7 +16,7 @@ cat <<EOF >${HOME}/Library/LaunchAgents/com.user.loginscript.plist
         <string>/usr/bin/hidutil</string>
         <string>property</string>
         <string>--set</string>
-        <string>{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000035, "HIDKeyboardModifierMappingDst":0x700000064}, {"HIDKeyboardModifierMappingSrc":0x700000064, "HIDKeyboardModifierMappingDst":0x700000035}]}</string>
+        <string>{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000035, "HIDKeyboardModifierMappingDst":0x700000064}, {"HIDKeyboardModifierMappingSrc":0x700000064, "HIDKeyboardModifierMappingDst":0x700000035}, {"HIDKeyboardModifierMappingSrc":0x700000039, "HIDKeyboardModifierMappingDst":0x700000029}]}</string>
     </array>
     <key>RunAtLoad</key>
     <true/>
@@ -95,6 +95,7 @@ brew install --cask \
 	iterm2 \
 	keepassxc \
 	logseq \
+	obsidian \
 	signal \
 	spotify \
 	yubico-yubikey-manager \
@@ -115,6 +116,7 @@ ln -sf ${0:A:h}/.zshrc ${HOME}/.zshrc
 ln -sf ${0:A:h}/.config ${HOME}/.config
 ln -sf ${0:A:h}/.p10k.zsh ${HOME}/.p10k.zsh
 ln -sf ${0:A:h}/.tmux.conf ${HOME}/.tmux.conf
+ln -sf ${HOME}/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/notes ${HOME}
 
 # Mac App Store Apps
 mas install 1352778147 # Bitwarden
