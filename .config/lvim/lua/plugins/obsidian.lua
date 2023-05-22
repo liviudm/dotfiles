@@ -22,8 +22,8 @@ return {
     -- "junegunn/fzf.vim"
 
     -- Optional, alternative to nvim-treesitter for syntax highlighting.
-    "godlygeek/tabular",
-    "preservim/vim-markdown",
+    -- "godlygeek/tabular",
+    -- "preservim/vim-markdown",
   },
   opts = {
     dir = "~/notes", -- no need to call 'vim.fn.expand' here

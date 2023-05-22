@@ -60,6 +60,8 @@ brew tap homebrew/cask-fonts
 echo "Installing brew packages..."
 # OS Base
 brew install \
+  cmake \
+  cmake-docs \
 	fd \
 	fzf \
 	gcc \
@@ -70,6 +72,7 @@ brew install \
 	mas \
 	neovim \
 	pinentry-mac \
+  protobuf \
 	reattach-to-user-namespace \
 	ripgrep \
 	sf-symbols \
@@ -81,7 +84,6 @@ brew install \
 	go \
 	luarocks \
 	node \
-	rust
 
 # DevOps Tools
 brew install \
@@ -100,6 +102,10 @@ brew install --cask \
 	spotify \
 	yubico-yubikey-manager \
 	zoom
+
+echo "Installing rustup..."
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs  | sh -s -- -y
+echo 'source $HOME/.cargo/env' >> ~/.zshrc
 
 echo "Setting up oh-my-zsh..."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -122,8 +128,9 @@ ln -sf ${HOME}/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/notes ${
 mas install 1352778147 # Bitwarden
 mas install 747648890  # Telegram
 mas install 1147396723 # WhatsApp
-mas install 904280696  # Things
 mas install 1482454543 # Twitter
+mas install 585829637  # Todoist
+mas install 1423210932 # Flow (Pomodoro)
 
 echo "Setting up MacOS defaults..."
 defaults write NSGlobalDomain _HIHideMenuBar -bool true
@@ -135,3 +142,23 @@ defaults write com.apple.dock "tilesize" -int "36"
 defaults write com.apple.finder ShowStatusBar -bool false
 defaults write -g InitialKeyRepeat -int 15
 defaults write -g KeyRepeat -int 2
+
+echo "Setting up Dock items..."
+dock_item() {
+  printf '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>%s</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>', "$1"
+}
+
+launchpad=$(dock_item /System/Applications/Launchpad.app/)
+safari=$(dock_item /System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app/)
+calendar=$(dock_item /System/Applications/Calendar.app/)
+spotify=$(dock_item /Applications/Spotify.app/)
+todoist=$(dock_item /Applications/Todoist.app/)
+logseq=$(dock_item /Applications/Logseq.app/)
+obsidian=$(dock_item /Applications/Obsidian.app/)
+iterm2=$(dock_item /Applications/iTerm.app/)
+
+user=$(whoami)
+sudo su $user -c "defaults delete com.apple.dock persistent-apps"
+sudo su $user -c "defaults write com.apple.dock persistent-apps -array '$launchpad' '$safari' '$calendar' '$spotify' '$todoist' '$logseq' '$obsidian' '$iterm2'"
+
+killall Dock

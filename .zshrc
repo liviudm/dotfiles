@@ -106,13 +106,12 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias vim=nvim
-alias pvim="NVIM_APPNAME=pvim nvim"
-alias lvim="NVIM_APPNAME=lvim nvim "
-
-export CC=/opt/homebrew/bin/gcc-13
+alias vi=lvim
+alias vim=lvim
+alias lvim="CC=/opt/homebrew/bin/gcc-13 NVIM_APPNAME=lvim nvim "
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source $HOME/.cargo/env
