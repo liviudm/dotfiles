@@ -86,7 +86,12 @@ return {
       filesystem = {
         filtered_items = {
           hide_dotfiles = false,
-          hide_gitignored = false,
+          hide_gitignored = true,
+          hide_by_name = {
+            ".git",
+            "node_modules",
+            "target",
+          },
           never_show = { ".DS_Store", }
         },
         hijack_netrw_behavior = "open_default",
