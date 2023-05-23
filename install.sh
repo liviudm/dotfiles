@@ -84,6 +84,7 @@ brew install \
 	go \
 	luarocks \
 	node \
+  php
 
 # DevOps Tools
 brew install \
@@ -91,7 +92,9 @@ brew install \
 	terraform-ls
 # Casks
 brew install --cask \
+  alfred \
 	amethyst \
+  dash \
 	discord \
 	font-hack-nerd-font \
 	iterm2 \
