@@ -99,9 +99,11 @@ brew install --cask \
 	font-hack-nerd-font \
 	iterm2 \
 	keepassxc \
+  ledger-live \
 	logseq \
 	obsidian \
 	signal \
+  slack \
 	spotify \
 	yubico-yubikey-manager \
 	zoom
@@ -133,7 +135,8 @@ mas install 747648890  # Telegram
 mas install 1147396723 # WhatsApp
 mas install 1482454543 # Twitter
 mas install 585829637  # Todoist
-mas install 1423210932 # Flow (Pomodoro)
+mas install 975937182  # Fantastical
+mas install 1096128050 # Pomo Done
 
 echo "Setting up MacOS defaults..."
 defaults write NSGlobalDomain _HIHideMenuBar -bool true
