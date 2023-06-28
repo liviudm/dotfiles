@@ -60,6 +60,7 @@ brew tap homebrew/cask-fonts
 echo "Installing brew packages..."
 # OS Base
 brew install \
+  awscli \
   cmake \
   cmake-docs \
 	fd \
